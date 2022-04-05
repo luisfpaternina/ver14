@@ -334,5 +334,15 @@ class SaleSuscriptionInherit(models.Model):
                                 'invoice_line_ids': vals_lines,
                                 }
                         res.write(vals)
+            
+            else:
+                if record.product_id:
+                    vals = {
+                                'product_id': record.product_id.id,
+                                'task_user_id': record.task_user_id.id,
+                                'sale_type_id': record.sale_type_id.id,
+                                'gadgets_contract_type_id': record.gadgest_contract_type_id.id
+                                }
+                    res.write(vals)
 
         return res
