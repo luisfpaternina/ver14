@@ -84,5 +84,54 @@
 
         </field>
     </record>
+
+    <record id="sale_subscription_inherit_kanban" model="ir.ui.view">
+        <field name="name">sale.subscription.form.inherit</field>
+        <field name="model">sale.subscription</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_kanban"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='code']" position="after">
+                <field name="product_id" display="full"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="sale_subscription_inherit_tree" model="ir.ui.view">
+        <field name="name">sale.subscription.form.inherit</field>
+        <field name="model">sale.subscription</field>
+        <field name="inherit_id" ref="sale_subscription.sale_subscription_view_list"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="product_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="custom_view_sale_subscription_search">
+            <field name="name">custom.sale.subscription.search</field>
+            <field name="model">sale.subscription</field>
+            <field name="inherit_id" ref="sale_subscription.sale_subscription_view_search"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <separator/>
+                    <field name="product_id"/>
+                </field>
+               
+                <xpath expr="//search/group" position="inside">
+                    <filter string="Aparato" name="product_id" context="{'group_by':'product_id'}"/>
+                </xpath>
+
+                
+                <xpath expr="//search/filter[@name='filter_date_start']" position="after">
+                    <filter string="Aparato" name="product_id" domain="[('product_id', '!=', False)]"/>
+                </xpath>
+                
+
+            </field>
+    </record>
     
 </odoo>     
