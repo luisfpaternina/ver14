@@ -23,7 +23,7 @@ msgstr "Acción"
 #. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_move_unpaid__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Adjuntos"
 
 #. module: sat_companies
 #: model:ir.model,name:sat_companies.model_res_company
