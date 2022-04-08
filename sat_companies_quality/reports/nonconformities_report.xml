@@ -25,14 +25,53 @@
                                 width: 100%;
                                 border: 4px solid;
                                 }
+                                div#c{
+                                width:20px;
+                                height:20px;
+                                background-color:white;
+                                float:right;
+                                border: 1px solid black;
+                                border-radius: 0px;
+                                }
+                                div#b{
+                                background-color:white;
+                                float:left;
+                                }
                             </style>
-                            <table width="100%">
+                            <table width="100%" class="table">
                                 <tr>
                                     <td>FECHA:</td>
                                     <td>N°</td>
                                 </tr>
                                 <tr>
-                                    <td>ORIGEN</td>
+                                    <td>
+                                        <div id="b">
+                                            <div>ORIGEN</div>
+                                            AUDITORIA <div id="c"></div><br></br>
+                                            PROCESO <div id="c"></div><br></br>
+                                            DOCUMENTAL <div id="c"></div><br></br>
+                                        </div>
+                                        
+                                    </td>
+                                    <td>
+                                        <div id="b">
+                                            <div><p> </p></div>
+                                            COMPRAS Y PROVEEDORES <div id="c"></div><br></br>
+                                            INDICADORES/OBJETIVOS <div id="c"></div><br></br>
+                                            RECLAMACIÓN/QUEJA(N°HR) <div id="c"></div><br></br>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>DESCRIPCIÓN DE LA NO CONFORMIDAD:</strong>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>CAUSAS DE LA NO CONFORMIDAD:</strong>
+                                    </td>
                                     <td></td>
                                 </tr>
                             </table>
