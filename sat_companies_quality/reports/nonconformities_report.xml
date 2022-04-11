@@ -9,7 +9,7 @@
                         <table width="100%">
                             <tr>
                                 <td align="center">
-                                    <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="120" height="100"/>
+                                    <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="150" height="130"/>
                                 </td>
                                 <td>
                                     <strong align="center">INFORME DE NO CONFORMIDADES<br></br>
@@ -40,11 +40,12 @@
                             </style>
                             <table width="100%" class="table">
                                 <tr>
-                                    <td>FECHA:</td>
+                                    <td colspan="3">FECHA:</td>
                                     <td>N°</td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td colspan="3">
                                         <div id="b">
                                             <div>ORIGEN</div>
                                             AUDITORIA <div id="c"></div><br></br>
@@ -61,18 +62,102 @@
                                             RECLAMACIÓN/QUEJA(N°HR) <div id="c"></div><br></br>
                                         </div>
                                     </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td colspan="3">
                                         <strong>DESCRIPCIÓN DE LA NO CONFORMIDAD:</strong>
                                     </td>
                                     <td></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <strong>CAUSAS DE LA NO CONFORMIDAD:</strong>
+                                    <td colspan="3">
+                                        <strong>CAUSAS DE LA NO CONFORMIDAD:</strong><br></br>
+                                        <p></p><br></br>
+                                        <strong><span>Detectada por:</span></strong><span> </span><strong><span>Fecha:</span></strong>
                                     </td>
                                     <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <strong>SOLUCIÓN INMEDIATA:</strong>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <strong>Responsable de ejecución:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Plazo de Ejecución:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Fecha de cierre:</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <strong>¿Se requiere actualizar los riegos y oportunidades?</strong> <br></br><br></br>
+                                        Firma Responsable de Calidad:
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <strong>ACCIONES A LLEVAR A CABO:</strong>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <strong>Responsable de llevar a cabo la acción:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Plazo:</strong>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="3">
+                                        <strong>SEGUIMIENTO Y VERIFICACIÓN:</strong><br></br><br></br>
+                                        Firma del Responsable de Calidad:                                                                    
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="3">
+                                        <strong>Cierre:</strong><br></br>
+                                        <strong>Fecha:</strong><br></br>
+                                        <strong>Firma:</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Responsable ejecución:</strong><br></br>
+                                        <strong>Fecha Fin:</strong><br></br>
+                                        <strong>Firma:</strong>
+                                    </td>
+                                    <td>
+
+                                    </td>
                                 </tr>
                             </table>
                         </div>
