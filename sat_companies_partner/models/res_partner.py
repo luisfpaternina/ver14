@@ -8,6 +8,7 @@ import re
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
+    _rec_name = 'name'
 
     code = fields.Char(
         string="Code",

@@ -23,7 +23,7 @@
         #'security/security.xml',
         #'security/ir.model.access.csv',
         'reports/nonconformities_report.xml',
-        #'views/res_partner_zone.xml',
+        'views/quality_alert.xml',
         
     ],
     'installable': True
