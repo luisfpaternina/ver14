@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from itertools import groupby
-
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 from odoo.tools import float_is_zero, float_compare, DEFAULT_SERVER_DATETIME_FORMAT
 import odoo.addons.decimal_precision as dp
+import logging
 
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
@@ -23,6 +23,14 @@ class PurchaseOrder(models.Model):
     po_inv_count = fields.Integer(string="Purchase Invoice Count", compute='compute_purchase_inv_count')
     is_regular_invoice = fields.Boolean(string="Full payment",default=False,copy=False)
     partner_shipping_id = fields.Many2one('res.partner', string="Shipping partner")
+    acumulate = fields.Float(string="Acumulate")
+
+
+    def calculate_acumulate(self):
+        invoice_obj = self.env['account.move'].search([('invoice_origin', '=', self.name)])
+        if invoice_obj:
+            for inv in invoice_obj:
+                self.acumulate = inv.amount_total
 
     def copy(self, default=None):
         duplicate_po = super(PurchaseOrder, self).copy(default=default)

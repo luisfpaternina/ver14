@@ -25,6 +25,48 @@
                             <field name="is_complaints"/>
                             <field name="is_indicators"/>
                         </group>
+                        <group>
+                            <field name="nonconformity_description"/>
+                        </group>
+                        <group>
+                            <field name="nonconformity_causes"/>
+                            <field name="detected_by"/>
+                            <field name="detected_date"/>
+                        </group>
+                        <group>
+                            <field name="immediate_solution"/>
+                        </group>
+                        <group>
+                            <field name="user_execution_id"/>
+                            <field name="execution_period"/>
+                            <field name="closing_date"/>
+                        </group>
+                        <group>
+                            <field name="risks_opportunities"/>
+                        </group>
+                        <group>
+                            <field name="responsable_sign"  widget="signature"/>
+                        </group>
+                        <group>
+                            <field name="is_corrective_action"/>
+                        </group>
+                        <group>
+                            <field name="quality_responsable_sign" widget="signature"/>
+                        </group>
+                        <group>
+                            <field name="actions_carried_out"/>
+                        </group>
+                        <group>
+                            <field name="user_carried_id"/>
+                            <field name="term"/>
+                        </group>
+                        <group>
+                            <field name="monitoring_verification"/>
+                        </group>
+                        <group>
+                            <field name="quality_responsable"  widget="signature"/>
+                            <field name="quality_date"/>
+                        </group>
                     </group>
                 </page>
             </xpath>
