@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-11 12:52+0000\n"
-"PO-Revision-Date: 2022-04-11 12:52+0000\n"
+"POT-Creation-Date: 2022-04-18 12:21+0000\n"
+"PO-Revision-Date: 2022-04-18 12:21+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -138,14 +138,29 @@ msgid "AUDITORIA"
 msgstr ""
 
 #. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__actions_carried_out
+msgid "Actions to be carried out"
+msgstr "Acciones a llevar a cabo"
+
+#. module: sat_companies_quality
 #: model_terms:ir.ui.view,arch_db:sat_companies_quality.report_template_notconformities
 msgid "COMPRAS Y PROVEEDORES"
 msgstr ""
 
 #. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__user_carried_id
+msgid "Carried out responsable"
+msgstr "Responsable de llevar a cabo la acción"
+
+#. module: sat_companies_quality
 #: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__nonconformity_causes
 msgid "Causes"
 msgstr "Causas"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__closing_date
+msgid "Closing date"
+msgstr "Fecha de cierre"
 
 #. module: sat_companies_quality
 #: model_terms:ir.ui.view,arch_db:sat_companies_quality.report_template_notconformities
@@ -178,6 +193,11 @@ msgid "EMISION"
 msgstr ""
 
 #. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__execution_period
+msgid "Execution period"
+msgstr "Plazo de ejecución"
+
+#. module: sat_companies_quality
 #: model_terms:ir.ui.view,arch_db:sat_companies_quality.report_template_notconformities
 msgid "FECHA:"
 msgstr ""
@@ -208,9 +228,19 @@ msgid "Is complaints"
 msgstr "Reclamación/queja"
 
 #. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__is_corrective_action
+msgid "Is corrective action"
+msgstr "Se abre acción correctiva?"
+
+#. module: sat_companies_quality
 #: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__is_documentary
 msgid "Is documentary"
 msgstr "Documental"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__is_indicators
+msgid "Is indicators"
+msgstr "Indicadores/Objetivos"
 
 #. module: sat_companies_quality
 #: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__is_process
@@ -221,6 +251,11 @@ msgstr "Proceso"
 #: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__monitoring_verification
+msgid "Monitoring and verification"
+msgstr "Seguimiento y verificación"
 
 #. module: sat_companies_quality
 #: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__nonconformity_date
@@ -256,3 +291,34 @@ msgstr ""
 #: model:ir.model,name:sat_companies_quality.model_quality_alert
 msgid "Quality Alert"
 msgstr "Alerta de Calidad"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__quality_date
+msgid "Quality date"
+msgstr "Fecha"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__quality_responsable
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__quality_responsable_sign
+msgid "Quality responsable sign"
+msgstr "Firma responsable de calidad"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__responsable_sign
+msgid "Responsable sign"
+msgstr "Firma responsable de calidad"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__user_execution_id
+msgid "Responsible execution"
+msgstr "Responsable de ejecución"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__risks_opportunities
+msgid "Risks and opportunities"
+msgstr "Se requiere actualizar los riesgos y oportunidades?"
+
+#. module: sat_companies_quality
+#: model:ir.model.fields,field_description:sat_companies_quality.field_quality_alert__term
+msgid "Term"
+msgstr "Plazo"
