@@ -6,7 +6,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form/header" position="inside">
+            <xpath expr="//button[@name='action_confirm']" position="before">
                 <button 
                 string="IMPRIMIR PEDIDO"
                 type="object"
