@@ -9,13 +9,10 @@
                         <table width="100%">
                               <tr>
                                     <td>
-                                      <center>
                                         <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="115" height="90"/>
-                                      </center>
                                     </td>
                                     <td>
-                                          
-                                          <p style="font-size:14px">
+                                          <p style="font-size:10px">
                                               <span>NIT: 802008300-0</span><br></br>
                                               <span>RESPONSABLE DEL IVA</span><br></br>
                                               <span t-field="o.company_id.street"></span><br></br>
@@ -23,7 +20,6 @@
                                               <span>PBX-53580448 Cel: 3107289781</span><br></br>
                                               <span></span><br></br>
                                           </p>
-                              
                                     </td>
                                     <td class="table">
                                         <center>
@@ -31,7 +27,7 @@
                                           FACTURA ELECTRÓNICA <br></br>
                                           DE VENTA
                                         </p>
-                                        <p style="font-size:13px">
+                                        <p style="font-size:10px">
                                           Fecha Generación: <br></br>
                                           Fecha Generación: <br></br>
                                           Forma de pago: <br></br>
