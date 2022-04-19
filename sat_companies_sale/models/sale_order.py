@@ -96,6 +96,15 @@ class SaleOrder(models.Model):
                 return {'domain': {'udn_id': []}}
 
 
+    @api.onchange('sale_type_id')
+    def domain_saletemplate(self):
+        for record in self:
+            if record.sale_type_id:
+                return {'domain': {'sale_order_template_id': [('sale_type_id', '=', record.sale_type_id.id)]}}
+            else:
+                return {'domain': {'sale_order_template_id': []}}
+
+
     @api.onchange('state','name')
     def send_pdf_description(self):
         for record in self:
