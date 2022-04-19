@@ -28,7 +28,13 @@
                                     <td>
                                         <center>
                                         <p>
-                                          FACTURA ELECTRÓNICA
+                                          FACTURA ELECTRÓNICA <br></br>
+                                          DE VENTA
+                                        </p>
+                                        <p style="font-size:10px">
+                                          Fecha Generación: <br></br>
+                                          Fecha Generación: <br></br>
+                                          Forma de pago: <br></br>
                                         </p>
                                         </center>
                                     </td>
