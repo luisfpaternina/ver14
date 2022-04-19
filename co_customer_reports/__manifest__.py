@@ -1,46 +1,35 @@
 ###############################################################################################
 #
-# Luis Felipe Paternina  
-# Ing.Sistemas                                
-# Odoo Dev
+# Luis Felipe Paternina  - Julian Bocanegra                                
+# Odoo Dev                 Odoo Consulting
 # 
-# Cel: 3215062353
-#
-#
 # Bogotá,Colombia
 #
 #
 ###############################################################################################
 
 {
-    'name': 'Introdoo',
+    'name': 'co customer reports',
 
-    'version': '13.1',
+    'version': '13.0.0.0',
 
-    'author': "Luis Felipe Paternina",
+    'author': "Coondev S.A.S",
 
     'contributors': ['Luis Felipe Paternina'],
 
-    'website': "",
+    'website': "www.coodev.com",
 
-    'category': 'Trainning',
+    'category': 'reports',
 
     'depends': [
 
-        'sale_management',
-        'contacts'
+        'account_accountant',
+        'base',
     ],
 
     'data': [
     
-        'security/ir.model.access.csv',
-        'views/res_company.xml',
-        'views/sale_order.xml',
-        'views/res_config_settings.xml',
-        'wizard/wizard.xml',
-        'reports/sale_order.xml',
-        'data/base_automatization.xml',           
+        'reports/invoice_report.xml',      
     ],
     'installable': True
 }
-
