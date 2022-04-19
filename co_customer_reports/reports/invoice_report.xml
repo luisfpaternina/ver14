@@ -15,7 +15,7 @@
                                     </td>
                                     <td>
                                           <center>
-                                          <p style="font-size:10px">
+                                          <p style="font-size:14px">
                                               <span>NIT</span><br></br>
                                               <span>RESPONSABLE DEL IVA</span><br></br>
                                               <span t-field="o.company_id.street"></span><br></br>
@@ -31,7 +31,7 @@
                                           FACTURA ELECTRÓNICA <br></br>
                                           DE VENTA
                                         </p>
-                                        <p style="font-size:10px">
+                                        <p style="font-size:13px">
                                           Fecha Generación: <br></br>
                                           Fecha Generación: <br></br>
                                           Forma de pago: <br></br>
@@ -43,9 +43,7 @@
                     </div>
                     <div class="article o_report_layout_standard">
                        <div class="page">
-                            <style>
-                                
-                            </style>
+                            <br></br>
                             <table width="100%" class="table">
                                   <tr>
                                       <td>
@@ -185,7 +183,7 @@
                                             </t>
                                         </tr>
                                     </t>
-                                    <tr class="border-black o_total">
+                                    <tr>
                                         <td><strong>Total</strong></td>
                                         <td class="text-right">
                                             <span class="text-nowrap" t-field="o.amount_total"/>
