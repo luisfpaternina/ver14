@@ -11,7 +11,7 @@
 {
     'name': 'co customer reports',
 
-    'version': '13.0.0.0',
+    'version': '14.0.0.0',
 
     'author': "Coondev S.A.S",
 
