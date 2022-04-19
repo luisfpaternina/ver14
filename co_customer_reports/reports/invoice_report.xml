@@ -15,10 +15,13 @@
                                     </td>
                                     <td>
                                           <center>
-                                          <p style="font-size:10vw">
-                                              <span t-field="o.company_id"></span><br></br>
+                                          <p style="font-size:10px">
+                                              <span>NIT</span><br></br>
+                                              <span>RESPONSABLE DEL IVA</span><br></br>
                                               <span t-field="o.company_id.street"></span><br></br>
-                                              <span t-field="o.company_id.phone"></span>
+                                              <span>BARRANQUILLA - ATLANTICO</span><br></br>
+                                              <span>PBX-53580448 Cel: 3107289781</span><br></br>
+                                              <span></span><br></br>
                                           </p>
                                         </center>
                                     </td>
