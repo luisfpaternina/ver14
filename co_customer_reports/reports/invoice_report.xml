@@ -17,8 +17,7 @@
                                               <span>RESPONSABLE DEL IVA</span><br></br>
                                               <span t-field="o.company_id.street"></span><br></br>
                                               <span>BARRANQUILLA - ATLANTICO</span><br></br>
-                                              <span>PBX-53580448 Cel: 3107289781</span><br></br>
-                                              <span></span><br></br>
+                                              <span>PBX-53580448 Cel: 3107289781</span>
                                           </p>
                                     </td>
                                     <td class="table">
