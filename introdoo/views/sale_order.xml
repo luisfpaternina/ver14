@@ -10,7 +10,7 @@
                 <button 
                 string="IMPRIMIR PEDIDO"
                 type="object"
-                name="print_report"
+                name="print_report_introdoo"
                 class="oe_highlight"
                 />
             </xpath>
