@@ -16,7 +16,7 @@
                                     <td>
                                           <center>
                                           <p style="font-size:14px">
-                                              <span>NIT</span><br></br>
+                                              <span>NIT: 802008300-0</span><br></br>
                                               <span>RESPONSABLE DEL IVA</span><br></br>
                                               <span t-field="o.company_id.street"></span><br></br>
                                               <span>BARRANQUILLA - ATLANTICO</span><br></br>
