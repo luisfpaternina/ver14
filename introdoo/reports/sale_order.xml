@@ -263,7 +263,7 @@
                                        <span t-field="line.name"/>
                                     </td>
                                     <td>
-                                       <span t-field="line.product_qty"/>
+                                       <span/>
                                     </td>
                                   </tr>
                                 </t>
