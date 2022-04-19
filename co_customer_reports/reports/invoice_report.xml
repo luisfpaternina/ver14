@@ -46,7 +46,39 @@
                             <style>
                                 
                             </style>
-                            <p>Cuerpo</p>
+                            <table width="100%" class="table">
+                                  <tr>
+                                      <td>
+                                        <span>Cliente:</span><br></br>
+                                        <span>Dirección:</span><br></br>
+                                        <span>Ciudad:</span><br></br>
+                                        <span>Email:</span><br></br>
+                                      </td>
+                                      <td>
+                                          <span>C.C/NIT:</span><br></br>
+                                          <span>Teléfono:</span><br></br>
+                                          <span>Fecha de Entrada:</span><br></br>
+                                      </td>
+                                  </tr>
+                            </table>
+                            <table width="100%" class="table">
+                                  <tr>
+                                      <td>
+                                        <span>Doctor(a):</span><br></br>
+                                        <span>Paciente:</span><br></br>
+                                        <span>Observaciones:</span><br></br>
+                                        <span>Boleta:</span><br></br>
+                                        <span>Caja:</span><br></br>
+                                      </td>
+                                      <td>
+                                          <span>Contrato:</span><br></br>
+                                          <span>Historia:</span><br></br>
+                                          <span>Color- Guía:</span><br></br>
+                                          <span>Tecnico:</span><br></br>
+                                          <span>Facturó:</span><br></br>
+                                      </td>
+                                  </tr>
+                            </table>
                        </div>
                     </div>
                     <div class="footer">
