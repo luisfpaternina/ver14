@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
+
+        <record id="paperformat_custom_fac_electronic" model="report.paperformat">
+            <field name="name">Facturación electrónica</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">90</field>
+            <field name="page_width">180</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">38</field>
+            <field name="margin_bottom">32</field>
+            <field name="margin_left">6</field>
+            <field name="margin_right">6</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">39</field>
+            <field name="dpi">90</field>
+        </record>
         
         <template id="report_template_co_invoice">
             <t t-call="web.html_container">
@@ -42,33 +58,33 @@
                             <table width="100%" class="table">
                                   <tr>
                                       <td>
-                                        <span>Cliente:</span><br></br>
-                                        <span>Dirección:</span><br></br>
-                                        <span>Ciudad:</span><br></br>
-                                        <span>Email:</span><br></br>
+                                        <strong><span>Cliente:</span></strong><br></br>
+                                        <strong><span>Dirección:</span></strong><br></br>
+                                        <strong><span>Ciudad:</span></strong><br></br>
+                                        <strong><span>Email:</span></strong><br></br>
                                       </td>
                                       <td>
-                                          <span>C.C/NIT:</span><br></br>
-                                          <span>Teléfono:</span><br></br>
-                                          <span>Fecha de Entrada:</span><br></br>
+                                          <strong><span>C.C/NIT:</span></strong><br></br>
+                                          <strong><span>Teléfono:</span></strong><br></br>
+                                          <strong><span>Fecha de Entrada:</span></strong><br></br>
                                       </td>
                                   </tr>
                             </table>
                             <table width="100%" class="table">
                                   <tr>
                                       <td>
-                                        <span>Doctor(a):</span><br></br>
-                                        <span>Paciente:</span><br></br>
-                                        <span>Observaciones:</span><br></br>
-                                        <span>Boleta:</span><br></br>
-                                        <span>Caja:</span><br></br>
+                                        <strong><span>Doctor(a):</span></strong><br></br>
+                                        <strong><span>Paciente:</span></strong><br></br>
+                                        <strong><span>Observaciones:</span></strong><br></br>
+                                        <strong><span>Boleta:</span></strong><br></br>
+                                        <strong><span>Caja:</span></strong><br></br>
                                       </td>
                                       <td>
-                                          <span>Contrato:</span><br></br>
-                                          <span>Historia:</span><br></br>
-                                          <span>Color- Guía:</span><br></br>
-                                          <span>Tecnico:</span><br></br>
-                                          <span>Facturó:</span><br></br>
+                                          <strong><span>Contrato:</span></strong><br></br>
+                                          <strong><span>Historia:</span></strong><br></br>
+                                          <strong><span>Color- Guía:</span></strong><br></br>
+                                          <strong><span>Tecnico:</span></strong><br></br>
+                                          <strong><span>Facturó:</span></strong><br></br>
                                       </td>
                                   </tr>
                             </table>
