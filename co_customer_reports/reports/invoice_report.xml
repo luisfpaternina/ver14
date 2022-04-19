@@ -2,6 +2,7 @@
 <odoo>
     <data>
 
+        <!-- FORMATO DE PAPEL FACTURACIÓN ELECTRÓNICA  -->
         <record id="paperformat_custom_fac_electronic" model="report.paperformat">
             <field name="name">Facturación electrónica</field>
             <field name="default" eval="True" />
@@ -245,6 +246,10 @@
                 report_type="qweb-pdf"
                 name="co_customer_reports.report_template_co_invoice"
         />
+
+        <record id="co_customer_reports.id_template_co_invoice_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="co_customer_reports.paperformat_custom_fac_electronic"/>
+        </record>
 
     </data>
 </odoo>
