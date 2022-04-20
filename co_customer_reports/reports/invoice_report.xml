@@ -87,7 +87,7 @@
                 <div id="top">
                     <div id="a">
                       <!--<p>Hallo</p>-->
-                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(company.logo)" style="width: 100%; height: 100%; display: block; margin: auto; border: 0px solid red;" alt="Logo"/>
+                        <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="115" height="90"/>
                     </div>
                     <div id="b">
                       <!--<p>wie geht's</p>-->
