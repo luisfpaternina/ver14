@@ -6,7 +6,7 @@
         <record id="paperformat_custom_fac_electronic" model="report.paperformat">
             <field name="name">Facturación electrónica</field>
             <field name="default" eval="True" />
-            <field name="format">custom</field>
+            <field name="format">A4</field>
             <field name="page_height">90</field>
             <field name="page_width">180</field>
             <field name="orientation">Portrait</field>
