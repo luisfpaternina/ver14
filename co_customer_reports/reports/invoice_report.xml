@@ -96,11 +96,9 @@
                     </div>
                     <div id="c">
                       <!--<p>wie spät ist es?</p>-->
-                        <h6><t t-if="o.type == 'out_invoice'"><strong>FACTURA ELECTRONICA DE VENTA N°</strong></t>
-                            <t t-elif="o.type == 'out_refund' and o.refund_type=='credit'"><strong>NOTA CREDITO ELECTRONICA DE VENTA</strong></t>
-                            <t t-elif="o.type == 'out_refund' and o.refund_type=='debit'"><strong>NOTA DEBITO ELECTRONICA DE VENTA</strong></t>
+                        <h6><t><strong>FACTURA ELECTRONICA DE VENTA N°</strong></t>
                         <b><t t-esc="o.name"/></b></h6>
-                        <t t-esc="o.journal_id.resolution_text" t-options="{'widget': 'html'}"/>
+                        <t/>
                     </div>
                 </div>
                     </div>
