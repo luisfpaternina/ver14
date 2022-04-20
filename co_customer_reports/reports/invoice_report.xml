@@ -87,12 +87,12 @@
                 <div id="top">
                     <div id="a">
                       <!--<p>Hallo</p>-->
-                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="width: 100%; height: 100%; display: block; margin: auto; border: 0px solid red;" alt="Logo"/>
+                        <img t-if="o.company_id.logo" t-att-src="image_data_uri(company.logo)" style="width: 100%; height: 100%; display: block; margin: auto; border: 0px solid red;" alt="Logo"/>
                     </div>
                     <div id="b">
                       <!--<p>wie geht's</p>-->
-                        <h7>NIT: <t t-esc="company.vat"/></h7><br/>
-                        <span t-field="o.company_id.tributary_information" t-options="{'widget': 'html'}"/>
+                        <h7>NIT: <t/></h7><br/>
+                        <span />
                     </div>
                     <div id="c">
                       <!--<p>wie spät ist es?</p>-->
