@@ -5,8 +5,8 @@
         <!-- FORMATO DE PAPEL FACTURACIÓN ELECTRÓNICA  -->
         <record id="paperformat_custom_fac_electronic" model="report.paperformat">
             <field name="name">Facturación electrónica</field>
-            <field name="default" eval="True" />
-            <field name="format">A4</field>
+            <field name="default" eval="True"/>
+            <field name="format"></field>
             <field name="page_height">90</field>
             <field name="page_width">180</field>
             <field name="orientation">Portrait</field>
@@ -19,9 +19,11 @@
             <field name="dpi">90</field>
         </record>
         
+        <!-- VISTA QWEB-->
         <template id="report_template_co_invoice">
             <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">                    
+                <t t-foreach="docs" t-as="o">
+                    <!-- ENCABEZADO -->               
                     <div class="header">
                         <table width="100%">
                               <tr>
@@ -54,6 +56,7 @@
                         </table>
                     </div>
                     <div class="article o_report_layout_standard">
+                      <!-- CUERPO -->   
                        <div class="page">
                             <br></br>
                             <table width="100%" class="table">
@@ -230,6 +233,7 @@
                     </div>
                        </div>
                     </div>
+                    <!-- PIE DE PAGINA -->   
                     <div class="footer">
                         <table>
                             <tr>
@@ -256,6 +260,7 @@
             </t>
         </template>
 
+        <!-- INFORME -->   
         <report
                 id="id_template_co_invoice_report"
                 string="Factura Electrónica"
@@ -264,6 +269,7 @@
                 name="co_customer_reports.report_template_co_invoice"
         />
 
+        <!-- RELACIONAR FORMATO DE PAPEL AL QWEB -->   
         <record id="co_customer_reports.id_template_co_invoice_report" model="ir.actions.report">
             <field name="paperformat_id" ref="co_customer_reports.paperformat_custom_fac_electronic"/>
         </record>
