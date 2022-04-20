@@ -91,7 +91,9 @@
                     <th>Month</th>
                   </tr>
                   <tr>
-                    <td style="width:40%">January</td>
+                    <td style="width:40%">
+                        <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="115" height="90"/>
+                    </td>
                     <td style="width:30%">$100</td>
                     <td style="width:30%">$100</td>
                   </tr>
