@@ -25,35 +25,84 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- ENCABEZADO -->               
                     <div class="header">
-                        <table width="100%">
-                              <tr>
-                                    <td>
-                                        <img t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" width="115" height="90"/>
-                                    </td>
-                                    <td>
-                                          <p style="font-size:10px">
-                                              <span>NIT: 802008300-0</span><br></br>
-                                              <span>RESPONSABLE DEL IVA</span><br></br>
-                                              <span t-field="o.company_id.street"></span><br></br>
-                                              <span>BARRANQUILLA - ATLANTICO</span><br></br>
-                                              <span>PBX-53580448 Cel: 3107289781</span>
-                                          </p>
-                                    </td>
-                                    <td class="table">
-                                        <center>
-                                        <p>
-                                          FACTURA ELECTRÓNICA <br></br>
-                                          DE VENTA
-                                        </p>
-                                        <p style="font-size:10px">
-                                          Fecha Generación: <br></br>
-                                          Fecha Generación: <br></br>
-                                          Forma de pago: <br></br>
-                                        </p>
-                                        </center>
-                                    </td>
-                              </tr>
-                        </table>
+                        <style type="text/css">
+                    #top {
+                        width: 100%;
+                        height: 100px;
+                        border: 0px solid green;
+                    }
+                    #bottom {
+                        width: 100%;
+                        height: 55px;
+                        border: 0px solid red;
+                    }
+                    #a {
+                        float: left;
+                        width: 15%;
+                        height: 100%;
+                        border-style: none none solid solid;
+                        border-width: 1px;
+                        border-color: black;
+                        padding: 4px;
+                    }
+                    #b {
+                        float: left;
+                        border-bottom: 1px solid black;
+                        width: 30%;
+                        height: 100%;
+                        font-size: 10px;
+                        padding: 4px;
+                    }
+                    #c{
+                        float: left;
+                        border: 0px solid black;
+                        width: 55%;
+                        height: 100%;
+                        text-align: center;
+                    }
+                    <!--#d {-->
+                    <!--        border-style: none none solid solid; -->
+                    <!--        border-width: 1px; -->
+                    <!--        border-color: blue-->
+                    <!--    }-->
+
+                    <!-- #d {
+                        float: left;
+                        border: 0px solid black;
+                        width: 77%;
+                        height: 100%;
+                        padding: 10px;
+                        text-align: left;
+                        align: justify;
+                    }
+                    #e{
+                        float: left;
+                        border: 0px solid black;
+                        width: 23%;
+                        height: 100%;
+                        padding: 5px;
+                        text-align: left;
+                    } -->
+                </style>
+                <div id="top">
+                    <div id="a">
+                      <!--<p>Hallo</p>-->
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="width: 100%; height: 100%; display: block; margin: auto; border: 0px solid red;" alt="Logo"/>
+                    </div>
+                    <div id="b">
+                      <!--<p>wie geht's</p>-->
+                        <h7>NIT: <t t-esc="company.vat"/></h7><br/>
+                        <span t-field="o.company_id.tributary_information" t-options="{'widget': 'html'}"/>
+                    </div>
+                    <div id="c">
+                      <!--<p>wie spät ist es?</p>-->
+                        <h6><t t-if="o.type == 'out_invoice'"><strong>FACTURA ELECTRONICA DE VENTA N°</strong></t>
+                            <t t-elif="o.type == 'out_refund' and o.refund_type=='credit'"><strong>NOTA CREDITO ELECTRONICA DE VENTA</strong></t>
+                            <t t-elif="o.type == 'out_refund' and o.refund_type=='debit'"><strong>NOTA DEBITO ELECTRONICA DE VENTA</strong></t>
+                        <b><t t-esc="o.name"/></b></h6>
+                        <t t-esc="o.journal_id.resolution_text" t-options="{'widget': 'html'}"/>
+                    </div>
+                </div>
                     </div>
                     <div class="article o_report_layout_standard">
                       <!-- CUERPO -->   
