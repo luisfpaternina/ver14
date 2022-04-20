@@ -119,7 +119,7 @@
                                   <tr>
                                       <td>
                                         <strong><span>Cliente:</span></strong><span> </span><span t-field="o.partner_id"></span><br></br>
-                                        <strong><span>Dirección:</span></strong><br></br>
+                                        <strong><span>Dirección:</span></strong><span> </span><span t-field="o.partner_id.street"></span><br></br>
                                         <strong><span>Ciudad:</span></strong><br></br>
                                         <strong><span>Email:</span></strong><br></br>
                                       </td>
