@@ -135,16 +135,16 @@
                             <table class="table" name="invoice_line_table">
                         <thead>
                             <tr>
-                                <th>ITEM</th>
-                                <th>CÓDIGO</th>
-                                <th name="th_description" class="text-left"><span>DESCRIPCIÓN</span></th>
-                                <th name="th_quantity" class="text-right"><span>CANTIDAD</span></th>
-                                <th name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>VR UNIT</span></th>
-                                <th name="th_price_unit" t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                <th style="background-color:#B9B9B9">ITEM</th>
+                                <th style="background-color:#B9B9B9">CÓDIGO</th>
+                                <th style="background-color:#B9B9B9" name="th_description" class="text-left"><span>DESCRIPCIÓN</span></th>
+                                <th style="background-color:#B9B9B9" name="th_quantity" class="text-right"><span>CANTIDAD</span></th>
+                                <th style="background-color:#B9B9B9" name="th_priceunit" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>VR UNIT</span></th>
+                                <th style="background-color:#B9B9B9" name="th_price_unit" t-if="display_discount" t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
                                     <span>Disc.%</span>
                                 </th>
-                                <th name="th_taxes" t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>IVA%</span></th>
-                                <th name="th_subtotal" class="text-right">
+                                <th style="background-color:#B9B9B9" name="th_taxes" t-attf-class="text-left {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}"><span>IVA%</span></th>
+                                <th style="background-color:#B9B9B9" name="th_subtotal" class="text-right">
                                     <span groups="account.group_show_line_subtotals_tax_excluded">SUBTOTAL</span>
                                     <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
                                 </th>
