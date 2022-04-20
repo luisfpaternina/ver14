@@ -119,9 +119,9 @@
                                   <tr>
                                       <td>
                                         <strong><span>Cliente:</span></strong><span> </span><span t-field="o.partner_id"></span><br></br>
-                                        <strong><span>Dirección:</span></strong><span> </span><span t-field="o.partner_id.street"></span><br></br>
-                                        <strong><span>Ciudad:</span></strong><span> </span><span t-field="o.partner_id.city</span><br></br>
-                                        <strong><span>Email:</span></strong><span> </span><span t-field="o.partner_id.email><br></br>
+                                        <strong><span>Dirección:</span></strong><br></br>
+                                        <strong><span>Ciudad:</span></strong><br></br>
+                                        <strong><span>Email:</span></strong><br></br>
                                       </td>
                                       <td>
                                           <strong><span>C.C/NIT:</span></strong><br></br>
