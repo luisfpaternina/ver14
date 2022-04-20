@@ -231,9 +231,26 @@
                        </div>
                     </div>
                     <div class="footer">
-                        <p align="center">
-                           <span t-field="o.company_id"></span><br></br>
-                        </p>
+                        <table>
+                            <tr>
+                                <td>
+                                  <p style="font-size:10px">Fabricante del Software y <br></br>
+                                     Proveedor Tecnológico
+                                 </p>
+                                </td>
+                                <td>
+                                  <p style="font-size:10px">
+                                    FEDERACIÓN NACIONAL DE COMERCIANTES FENALCO SECCIONAL ANTIOQUIA <br></br>
+                                    NIT 890901481-5
+                                  </p>
+                                </td>
+                                <td>
+                                  <p style="font-size:10px">
+                                    Software de Facturación
+                                  </p>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </t>
             </t>
