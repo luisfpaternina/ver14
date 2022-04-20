@@ -231,6 +231,17 @@
                             </div>
                         </div>
                     </div>
+                    <div id="tletras">
+                       <t t-set="total_letras" t-value="o.currency_id.amount_to_text(o.amount_total)"/>
+                       <t t-if="o.currency_id.name == 'COP' and 'Peso' in total_letras and int(o.amount_total) != 1"><t t-set="total_letras" t-value="total_letras.replace('Peso', 'Pesos')"/></t>
+                       <t t-if="o.currency_id.name == 'USD' and 'Dollars' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Dollars', 'Dolares')"/></t>
+                       <t t-if="o.currency_id.name == 'USD' and 'Dollar' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Dollar', 'Dolar')"/></t>
+                       <t t-if="o.currency_id.name in ('USD','EUR') and 'Cents' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Cents', 'Centavos')"/></t>
+                       <t t-elif="o.currency_id.name in ('USD','EUR') and 'Cent' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Cent', 'Centavo')"/></t>
+                       <p class="text-justify"><strong>Total en letras: </strong> <span t-if="o.currency_id" t-esc="total_letras"/></p>
+                        <br/>
+                        <p class="text-justify" style="font-family: sans-serif; font-size:7px;"><span t-esc="o.company_id.tributary_information"/></p>
+                    </div>
                        </div>
                     </div>
                     <!-- PIE DE PAGINA -->   
