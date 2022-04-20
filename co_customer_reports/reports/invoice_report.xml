@@ -99,8 +99,8 @@
                         <span t-field="o.company_id.vat"></span>
                     </td>
                     <td style="width:30%">
-                        FACTURA ELECTRÓNICA<br></br>
-                        DE VENTA
+                        <strong>FACTURA ELECTRÓNICA<br></br>
+                        DE VENTA</strong>
                     </td>
                   </tr>
                 </table>
