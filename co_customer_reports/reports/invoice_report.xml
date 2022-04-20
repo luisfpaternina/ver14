@@ -7,8 +7,8 @@
             <field name="name">Facturación electrónica</field>
             <field name="default" eval="True"/>
             <field name="format">custom</field>
-            <field name="page_height">90</field>
-            <field name="page_width">180</field>
+            <field name="page_height">38</field>
+            <field name="page_width">32</field>
             <field name="orientation">Portrait</field>
             <field name="margin_top">38</field>
             <field name="margin_bottom">32</field>
