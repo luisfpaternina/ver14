@@ -287,7 +287,7 @@
                        <t t-elif="o.currency_id.name in ('USD','EUR') and 'Cent' in total_letras"><t t-set="total_letras" t-value="total_letras.replace('Cent', 'Centavo')"/></t>
                        <p class="text-justify"><strong>Total en letras: </strong> <span t-if="o.currency_id" t-esc="total_letras"/></p>
                         <br/>
-                        <p class="text-justify" style="font-family: sans-serif; font-size:7px;"><span t-esc="o.company_id.tributary_information"/></p>
+                        <p/></p>
                     </div>
                        </div>
                     </div>
