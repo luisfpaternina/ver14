@@ -109,6 +109,9 @@ class ProjectTaskInherit(models.Model):
     is_maintenance = fields.Boolean(
         string="Is maintenance",
         related="ot_type_id.is_maintenance")
+    is_old_task = fields.Boolean(
+        string="Is old task",
+        default=True)
 
 
     @api.onchange('partner_id','ot_type_id')

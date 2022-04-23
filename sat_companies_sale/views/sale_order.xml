@@ -15,9 +15,11 @@
                 <attribute name="invisible">1</attribute>
             </xpath>
 
+            <!--
             <xpath expr="//form/header/button[8]" position="attributes">
                 <attribute name="attrs">{'invisible':[('is_forecast_made', '=', False)]}</attribute>
             </xpath>
+            -->
 
             <xpath expr="//form/header/button[8]" position="after">
                 <field name="contract_send" invisible="True"/>
