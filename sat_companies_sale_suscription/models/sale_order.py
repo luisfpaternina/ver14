@@ -16,7 +16,7 @@ class SaleOrderTemplateInherit(models.Model):
 
     def _compute_check_contract_type(self):
         for record in self:
-            if record.sale_type_id.code == '01':
+            if record.sale_type_id.is_maintenance:
                 record.check_contract_type = True
             else:
                 record.check_contract_type = False
@@ -30,6 +30,15 @@ class SaleOrderTemplateInherit(models.Model):
                 self.acc_number = p.acc_number
 
 
+    @api.onchange('sale_type_id')
+    def domain_saletype_udn(self):
+        for record in self:
+            if record.sale_type_id:
+                return {'domain': {'sale_order_template_id': [('sale_type_id', '=', record.sale_type_id.id)]}}
+            else:
+                return {'domain': {'sale_order_template_id': []}}
+    
+    """
     @api.onchange('sale_type_id','gadgets_contract_type_id')
     def sale_order_template_domain(self):
         for record in self:
@@ -44,6 +53,7 @@ class SaleOrderTemplateInherit(models.Model):
                 ids_order_templates = sales_orders.ids
         
                 return {'domain': {'sale_order_template_id': [('id', 'in', ids_order_templates)]}}
+    """
 
     def create_subscriptions(self):
         res = super(SaleOrderTemplateInherit, self).create_subscriptions()
