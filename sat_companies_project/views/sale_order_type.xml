@@ -61,7 +61,7 @@
                             <page name="project_task" string="Task" attrs="{'invisible': [('is_create_task', '!=', True)]}">
                                 <group>
                                     <group>
-                                        <field name="project_task_ids" widget="many2many_tags" options="{'no_open': False}"/>
+                                        <field name="project_task_ids" widget="many2many_tags" options="{'no_open': False}" domain="[('is_old_task', '!=', True)]"/>
                                     </group>
                                 </group>
                             </page>
