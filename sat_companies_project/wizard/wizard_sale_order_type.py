@@ -28,6 +28,7 @@ class WizardSaleOrderType(models.TransientModel):
 
     def accept_task_type_sale(self):
         for record in self:
+            project_fsm = self.env.ref('industry_fsm.fsm_project', raise_if_not_found=False)
             if record.sale_order_id.sale_order_template_id:
                 sale_order_template = record.sale_order_id.sale_order_template_id.name +' - '
             else:
@@ -42,6 +43,17 @@ class WizardSaleOrderType(models.TransientModel):
                         'type_ids': record.sale_type_id.project_stage_ids.ids,
                         'task_ids': task_ids.ids
                     })
+                
+                if record.name and record.sale_type_id and record.sale_order_id:
+                    new_task = project_fsm.write({
+                        'name': sale_order_template +record.sale_order_id.name\
+                        +' - '+record.sale_order_id.partner_id.name,
+                        'sale_type_origin_id': record.sale_type_id.id,
+                        'type_ids': record.sale_type_id.project_stage_ids.ids,
+                        'task_ids': task_ids.ids
+                        
+                    })
+    
             else:
             
                 if not record.sale_order_id.product_id:
@@ -49,7 +61,6 @@ class WizardSaleOrderType(models.TransientModel):
                             'To create a task you must select a Gadget in the quote'
                         ))
                     
-                project_fsm = self.env.ref('industry_fsm.fsm_project', raise_if_not_found=False)
                 if record.sale_order_id.order_line:
                     for sale_lines in record.sale_order_id.order_line:
                         sale_lines.is_service = True
