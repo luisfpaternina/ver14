@@ -36,24 +36,49 @@ class WizardSaleOrderType(models.TransientModel):
 
             if record.sale_order_id.sale_type_id.is_create_task == True:
                 task_ids = record.sale_order_id.sale_type_id.project_task_ids
-                self.env['project.project'].create({
+
+                new_project = self.env['project.project'].create({
                         'name': sale_order_template +record.sale_order_id.name\
                         +' - '+record.sale_order_id.partner_id.name,
                         'sale_type_origin_id': record.sale_type_id.id,
                         'type_ids': record.sale_type_id.project_stage_ids.ids,
-                        'task_ids': task_ids.ids
                     })
                 
-                if record.name and record.sale_type_id and record.sale_order_id:
-                    new_task = project_fsm.write({
-                        'name': sale_order_template +record.sale_order_id.name\
-                        +' - '+record.sale_order_id.partner_id.name,
-                        'sale_type_origin_id': record.sale_type_id.id,
-                        'type_ids': record.sale_type_id.project_stage_ids.ids,
-                        'task_ids': task_ids.ids
+                if task_ids:
+                    for  task in task_ids:
+                        task_value = {
+                                'partner_id': record.sale_order_id.partner_id.id,
+                                'ot_type_id': record.sale_order_id.sale_type_id.id,
+                                'gadgest_contract_type_id': record.sale_order_id.gadgets_contract_type_id.id,
+                                'project_id': new_project.id,
+                                'user_id': record.sale_order_id.task_user_id.id,
+                                'product_id': record.sale_order_id.product_id.id,
+                                #'sale_line_id':record.sale_order_id.id,
+                                #'planned_date_begin': record.sale_order_id.date_begin,
+                                #'planned_date_end': record.sale_order_id.date_end,
+                                #'is_fsm': True,
+                                'categ_udn_id': record.sale_order_id.udn_id.id
+                                }
                         
-                    })
-    
+                        task.write(task_value)
+                        task_names = [x.name for x in project_fsm.task_ids]
+                        if task.name not in task_names:
+                            self.env['project.task'].create({
+                                'name': task.name,
+                                'partner_id': record.sale_order_id.partner_id.id,
+                                'ot_type_id': record.sale_order_id.sale_type_id.id,
+                                'gadgest_contract_type_id': record.sale_order_id.gadgets_contract_type_id.id,
+                                'project_id': project_fsm.id,
+                                'user_id': record.sale_order_id.task_user_id.id,
+                                'product_id': record.sale_order_id.product_id.id,
+                                #'sale_line_id':record.sale_order_id.id,
+                                #'planned_date_begin': record.sale_order_id.date_begin,
+                                #'planned_date_end': record.sale_order_id.date_end,
+                                'is_fsm': True,
+                                'categ_udn_id': record.sale_order_id.udn_id.id
+                                
+                            })
+
             else:
             
                 if not record.sale_order_id.product_id:
@@ -74,8 +99,8 @@ class WizardSaleOrderType(models.TransientModel):
                         'ot_type_id': record.sale_order_id.sale_type_id.id,
                         'gadgest_contract_type_id': record.sale_order_id.gadgets_contract_type_id.id,
                         'project_id': project_fsm.id,
-                        'user_id': record.sale_order_id.task_user_id.id or False,
-                        'product_id': record.sale_order_id.product_id.id or False,
+                        'user_id': record.sale_order_id.task_user_id.id,
+                        'product_id': record.sale_order_id.product_id.id,
                         #'sale_line_id':record.sale_order_id.id,
                         'planned_date_begin': record.sale_order_id.date_begin,
                         'planned_date_end': record.sale_order_id.date_end,
@@ -119,25 +144,4 @@ class WizardSaleOrderType(models.TransientModel):
                                         ]
                                     ]
                     })
-            """ 
-            if record.add_task_line == True and record.project_line_ids:
-                for line in record.project_line_ids:
-                    self.env['project.task'].create({
-                        'name': record.name+' - '+line.product_id.name+'TAREA DE LINEA',
-                        'partner_id': record.sale_order_id.partner_id.id,
-                        'ot_type_id': record.sale_type_id.id,
-                        'is_fsm': True,
-                        'order_lines': record.sale_order_id.ids
-                        
-                    })
-            
-                if record.duplicate_task== True:
-                    for line in record.project_line_ids:
-                        self.env['project.task'].create({
-                            'name': record.name+' - '+line.product_id.name+'TAREA DE LINEA DUPLICADA',
-                            'partner_id': record.sale_order_id.partner_id.id,
-                            'ot_type_id': record.sale_type_id.id,
-                        })
-            """ 
-                
             record.sale_order_id.action_confirm()
