@@ -59,7 +59,28 @@ class CrmLead(models.Model):
         'crm.lead.tracing',
         'lead_id',
         string="Tracing")
+    expected_revenue = fields.Monetary(
+        string="Expected revenue",
+        compute="_compute_expected_revenue")
+    expected_total = fields.Float(
+        string="Expected total",
+        compute="_compute_expected_revenue")
     
+    
+    @api.depends('order_ids')
+    def _compute_expected_revenue(self):
+        if self.order_ids:
+            lista = []
+            for line in self.order_ids:
+                lista.append(line.amount_total)
+                total = sum(lista)
+                self.expected_total = total
+                self.expected_revenue = total
+        else:
+            print("Oportunidad no tiene presupuestos")
+            self.expected_total = 0
+            self.expected_revenue = 0
+
 
     @api.onchange('sale_type_id')
     def domain_saletype_udn(self):
