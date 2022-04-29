@@ -8,6 +8,7 @@
 
             <xpath expr="//field[(@name='priority')]" position="after">
                 <field name="is_external"/>
+                <field name="expected_total" invisible="1"/>
             </xpath>
 
             <xpath expr="//field[@name='lost_reason']" position="before">
