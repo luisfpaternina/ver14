@@ -45,7 +45,7 @@ class WizardSaleOrderType(models.TransientModel):
                     })
                 
                 if task_ids:
-                    for  task in task_ids:
+                    for task in task_ids:
                         task_value = {
                                 'partner_id': record.sale_order_id.partner_id.id,
                                 'ot_type_id': record.sale_order_id.sale_type_id.id,

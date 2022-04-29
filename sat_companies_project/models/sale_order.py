@@ -71,10 +71,68 @@ class SaleOrder(models.Model):
                 record.action_confirm()
 
     def action_confirm(self):
+        state_no_sale = False
+        if self.state not in ['sale']:
+            state_no_sale = True
         res = super(SaleOrder, self).action_confirm()
-        if self.is_potential_client:
-            raise ValidationError(_("Verify the type of client if it is potential"))
-            return res
+        for record in self:
+            new_state_sale = False
+            if self.state in ['sale']:
+                new_state_sale = True
+            if state_no_sale and new_state_sale:
+                project_fsm = self.env.ref('industry_fsm.fsm_project', raise_if_not_found=False)
+                if record.sale_order_template_id:
+                    sale_order_template = record.sale_order_template_id.name +' - '
+                else:
+                    sale_order_template = ''
+
+                if record.sale_type_id.is_create_task == True:
+                    task_ids = record.sale_type_id.project_task_ids
+
+                    new_project = self.env['project.project'].create({
+                            'name': sale_order_template +record.name\
+                            +' - '+record.partner_id.name,
+                            'sale_type_origin_id': record.sale_type_id.id,
+                            'type_ids': record.sale_type_id.project_stage_ids.ids,
+                        })
+                    
+                    if task_ids:
+                        for task in task_ids:
+                            task_value = {
+                                    'partner_id': record.partner_id.id,
+                                    'ot_type_id': record.sale_type_id.id,
+                                    'gadgest_contract_type_id': record.gadgets_contract_type_id.id,
+                                    'project_id': new_project.id,
+                                    'user_id': record.task_user_id.id,
+                                    'product_id': record.product_id.id,
+                                    #'sale_line_id':record.sale_order_id.id,
+                                    #'planned_date_begin': record.sale_order_id.date_begin,
+                                    #'planned_date_end': record.sale_order_id.date_end,
+                                    #'is_fsm': True,
+                                    'categ_udn_id': record.udn_id.id
+                                    }
+                            
+                            task.write(task_value)
+                            task_names = [x.name for x in project_fsm.task_ids]
+                            if task.name not in task_names:
+                                self.env['project.task'].create({
+                                    'name': task.name,
+                                    'partner_id': record.partner_id.id,
+                                    'ot_type_id': record.sale_type_id.id,
+                                    'gadgest_contract_type_id': record.gadgets_contract_type_id.id,
+                                    'project_id': project_fsm.id,
+                                    'user_id': record.task_user_id.id,
+                                    'product_id': record.product_id.id,
+                                    #'sale_line_id':record.id,
+                                    #'planned_date_begin': record.date_begin,
+                                    #'planned_date_end': record.date_end,
+                                    'is_fsm': True,
+                                    'categ_udn_id': record.udn_id.id
+                                    
+                                })
+                if self.is_potential_client:
+                    raise ValidationError(_("Verify the type of client if it is potential"))
+                    return res
 
     @api.onchange(
         'partner_id',
