@@ -21,7 +21,6 @@
         'crm',
         'base',
         'base_automation',
-        'hr_holidays',
         'sat_companies_stock',
 
     ],
@@ -34,6 +33,7 @@
         'views/account_move_line.xml',
         'reports/invoice.xml',
         'reports/inherit_sale_order.xml',
+        'data/account_receipt.xml',
                    
     ],
     'installable': True
