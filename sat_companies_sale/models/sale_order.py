@@ -87,8 +87,8 @@ class SaleOrder(models.Model):
         string="Normative date")
 
 
-    @api.onchange('sale_type_id')
-    def domain_saletype_udn(self):
+    @api.onchange('sale_type_id', 'product_id')
+    def domain_udns(self):
         for record in self:
             if record.sale_type_id:
                 return {'domain': {'udn_id': [('ot_type_id', '=', record.sale_type_id.id)]}}
