@@ -16,7 +16,7 @@ class AccountMoveLine(models.Model):
         ir_model_data = self.env['ir.model.data']
         try:
             template_id = \
-            ir_model_data.get_object_reference('sat_companies', 'sat_companies.template_account_receipt_26')[1]
+            ir_model_data.get_object_reference('sat_companies', 'sat_companies.template_account_receipt_27')[1]
         except ValueError:
             template_id = False
         try:

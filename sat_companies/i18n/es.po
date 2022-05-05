@@ -230,7 +230,7 @@ msgstr ""
 #. module: sat_companies
 #: model_terms:ir.ui.view,arch_db:sat_companies.inherit_view_account_move_line_sat_companies
 msgid "Send by email"
-msgstr "Enviar correo"
+msgstr "Enviar recibo"
 
 #. module: sat_companies
 #: model:ir.model.fields,field_description:sat_companies.field_account_bank_statement_line__qr_in_report

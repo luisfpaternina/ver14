@@ -61,7 +61,8 @@ class CrmLead(models.Model):
         string="Tracing")
     expected_revenue = fields.Monetary(
         string="Expected revenue",
-        compute="_compute_expected_revenue")
+        compute="_compute_expected_revenue",
+        store=True)
     expected_total = fields.Float(
         string="Expected total",
         compute="_compute_expected_revenue")

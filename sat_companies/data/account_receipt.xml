@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <record id="template_account_receipt_26" model="mail.template">
+        <record id="template_account_receipt_27" model="mail.template">
             <field name="name">Recibo</field>
-            <field name="model_id" ref="account.model_account_move"/>
+            <field name="model_id" ref="account.model_account_move_line"/>
             <field name="subject">Recibo</field>
             <field name="email_from">${(object.write_uid.email_formatted or user.email_formatted) | safe}</field>
             <field name="email_to"></field>
@@ -54,12 +54,14 @@
                         <tr>
                             <td>
                                 <span>RECIBO NÚMERO</span><br></br>
+                                <span>369875</span>
                             </td>
                             <td>
-                                LOCALIDAD DE EXPEDICIÓN
+                                <span>LOCALIDAD DE EXPEDICIÓN</span><br></br>
+                                <span>${object.company_id.name}</span>
                             </td>
                             <td>
-                                IMPORTE
+                                <span>IMPORTE</span><br></br> 
                             </td>
                         </tr>
                         <tr>
@@ -96,7 +98,7 @@
                         <span>NOMBRE Y DOMICILIO DEL LIBRADO</span>
                     </div>
                     <div id="cuadro2">
-                        <strong>SERKI INSTALACIONES</strong>
+                        <strong>${object.company_id.name}</strong>
                     </div>
                 </div>
             </field>
